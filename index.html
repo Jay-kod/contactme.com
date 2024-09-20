@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Image with Contact Form</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- Responsive Navbar -->
+    <div class="w3-bar w3-light-grey w3-large">
+        <a href="#" class="w3-bar-item w3-button w3-hide-small">Home</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small">About</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small">Services</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+        
+        <a href="javascript:void(0)" class="w3-bar-item w3-green w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleNavbar()">
+            &#9776;
+        </a>
+    </div>
+
+    <!-- Links for small screens -->
+    <div id="smallNavbar" class="navbar-links w3-hide-large w3-hide-medium">
+        <a href="#" class="w3-bar-item w3-button">Home</a>
+        <a href="#" class="w3-bar-item w3-button">About</a>
+        <a href="#" class="w3-bar-item w3-button">Services</a>
+        <a href="#" class="w3-bar-item w3-button">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="w3-container hero">
+        <button class="w3-button w3-large w3-round" onclick="openForm()">Contact Us</button>
+    </div>
+
+    <div class="w3-container form-background" id="formBackground"></div>
+
+    <!-- Contact Form Popup -->
+    <div class="w3-container form-popup" id="contactForm">
+        <h2 class="w3-center">Contact Us</h2>
+        <form action="mailto:brainboxjj15@gmail.com" method="POST" enctype="text/plain" class="w3-container">
+            <input class="w3-input w3-border" type="text" name="name" placeholder="Your Name" required>
+            <input class="w3-input w3-border" type="email" name="email" placeholder="Your Email" required>
+            <input class="w3-input w3-border" type="tel" name="phone" placeholder="Your Phone Number" required>
+            <input class="w3-input w3-border" type="text" name="subject" placeholder="Subject" required>
+            <textarea class="w3-input w3-border" name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button class="w3-button w3-green w3-margin-top" type="submit">Send</button>
+        </form>
+        <button class="w3-button w3-red w3-margin-top" onclick="closeForm()">Cancel</button>
+    </div>
+
+    <script>
+        // Function to open the form
+        function openForm() {
+            document.getElementById("contactForm").style.display = "block";
+            document.getElementById("formBackground").style.display = "block";
+        }
+        
+        // Function to close the form
+        function closeForm() {
+            document.getElementById("contactForm").style.display = "none";
+            document.getElementById("formBackground").style.display = "none";
+        }
+
+        // Function to toggle the navbar for small screens
+        function toggleNavbar() {
+            var x = document.getElementById("smallNavbar");
+            x.style.display = (x.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
